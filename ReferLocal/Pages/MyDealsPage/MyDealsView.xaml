@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BaseContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ReferLocal.MyDealsView"
+		xmlns:local = "clr-namespace:ReferLocal" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+	<ContentView.Content>
+
+		<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+
+				<ListView x:Name = "dealListView" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical" Padding = "10" >
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical" Padding = "1" BackgroundColor = "#dadada">
+										<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical" BackgroundColor = "White">
+											<Image Source = "rustic_deal_header_image.jpg" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand"/>
+											<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Padding = "10">
+												<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+													<Grid.RowDefinitions>
+														<RowDefinition Height = "1*"/>
+													</Grid.RowDefinitions>
+													<Grid.ColumnDefinitions>
+														<ColumnDefinition Width = "1*"/>
+														<ColumnDefinition Width = "0.5*"/>
+													</Grid.ColumnDefinitions>
+
+													<Label x:Name = "descriptionLabel" TextColor = "Black" LineBreakMode = "WordWrap" FontSize = "15" Grid.Row = "0"
+															Grid.Column = "0">
+														<Label.Text>
+															$25 to RUSTIC KITCHEN &amp; $25 in FREE SLOT PLAY
+														</Label.Text>
+													</Label>
+
+													<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical"
+															Grid.Row = "0" Grid.Column = "1"> 
+														<Label Text = "PURCHASED ON:" FontSize = "11" HorizontalOptions = "End" HorizontalTextAlignment = "End" 
+															VerticalOptions = "CenterAndExpand"/>
+														<Label x:Name = "dateLabel" Text = "8/6/16" FontSize = "11" HorizontalOptions = "End" HorizontalTextAlignment = "End"
+																VerticalOptions = "CenterAndExpand" />
+													</StackLayout>
+												</Grid>
+											</StackLayout>
+											<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" >
+											</StackLayout>
+										</StackLayout>
+
+									</StackLayout>
+
+								</StackLayout>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+
+		</StackLayout>
+	</ContentView.Content>
+</local:BaseContentView>

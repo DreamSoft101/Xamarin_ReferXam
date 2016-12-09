@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ReferLocal.CheckOutPage">
+	<ContentPage.Content>
+		<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+
+			<Grid VerticalOptions = "FillAndExpand" HorizontalOptions = "FillAndExpand">
+				<Grid.RowDefinitions>
+					<RowDefinition Height = "50" />
+					<RowDefinition Height = "1*" />
+					<RowDefinition Height = "130" />
+				</Grid.RowDefinitions>
+
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width = "1*" />
+				</Grid.ColumnDefinitions>
+
+				<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Padding = "10" Grid.Row = "0" Grid.Column = "0" >
+					<Label HorizontalOptions = "Start" VerticalOptions = "Center" Text = "ORDER SUMMARY" TextColor = "#737373" FontSize = "13" FontAttributes = "Bold" />
+				</StackLayout>
+
+				
+				<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "1" Grid.Column = "0" Padding = "10, 0, 10, 0">
+					<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "Fill" BackgroundColor = "#e6e7e9" 
+						Orientation = "Vertical" Padding = "1, 0, 1, 1">
+
+						<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" RowSpacing = "1">
+							<Grid.RowDefinitions >
+								<RowDefinition Height = "3"  />
+								<RowDefinition Height = "60" />
+								<RowDefinition Height = "60" />
+								<RowDefinition Height = "60" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width = "1*" />
+							</Grid.ColumnDefinitions>
+
+							<BoxView HorizontalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "0" BackgroundColor = "#1269b0" />
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White" Orientation = "Horizontal" 
+								Grid.Row = "1" Grid.Column = "0">
+								<Label Text = "SUBTOTAL" TextColor = "#737373" FontSize = "14" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand"/>
+								<Label x:Name = "p" Text = "$50.00" TextColor = "Black" FontSize = "25" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" 
+								VerticalOptions = "CenterAndExpand"/>
+							</StackLayout >
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White" Orientation = "Horizontal" 
+								Grid.Row = "2" Grid.Column = "0">
+								<Label Text = "COUPON CODE" TextColor = "#737373" FontSize = "14" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand"/>
+								<Label x:Name = "l" Text = "APPLY" TextColor = "Black" FontSize = "25" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" 
+								VerticalOptions = "CenterAndExpand"/>
+							</StackLayout >
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White" Orientation = "Horizontal" 
+								Grid.Row = "3" Grid.Column = "0">
+								<Label Text = "TOTAL" TextColor = "#737373" FontSize = "14" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand"/>
+								<Label x:Name = "w" Text = "$50.00" TextColor = "Black" FontSize = "25" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" 
+								VerticalOptions = "CenterAndExpand"/>
+							</StackLayout >
+						</Grid>
+
+					</StackLayout>
+				</StackLayout>
+				<!--<ListView x:Name = "cartListView" Grid.Row = "1" Grid.Column = "0" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+				</ListView>-->
+				<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "2" Grid.Column = "0" Padding = "0" Spacing = "0" 
+						>
+
+					<Grid VerticalOptions = "FillAndExpand" HorizontalOptions = "CenterAndExpand">
+						<Grid.RowDefinitions>
+							<RowDefinition Height = "1*" />
+							<RowDefinition Height = "1*" />
+
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width = "1*" />
+						</Grid.ColumnDefinitions>
+
+						<Image x:Name = "checkOutBtn" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand"  Grid.Row = "0" Grid.Column = "0"
+							Source = "complete_checkout_button.png" />
+
+						<Image x:Name = "shopBtn" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand"  Grid.Row = "1" Grid.Column = "0"
+							Source = "continue_button.png" />
+						
+					</Grid>
+				</StackLayout>
+				
+			</Grid>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

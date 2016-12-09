@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ReferLocal.RegisterPage">
+	<ContentPage.Content>
+		<RelativeLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+
+			<StackLayout x:Name = "NavigationBarLayout" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" HeightRequest = "64"
+					Orientation = "Horizontal" RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}"
+					BackgroundColor = "#1269b0">
+
+				<Grid x:Name = "NavigationBarGrid" VerticalOptions = "FillAndExpand" HorizontalOptions = "FillAndExpand" 
+						RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}">
+
+					<Grid.RowDefinitions>
+						<RowDefinition Height = "1*" />
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width = "0.7*" />
+						<ColumnDefinition Width = "1.5*" />
+						<ColumnDefinition Width = "0.7*" />
+					</Grid.ColumnDefinitions>
+
+
+					<StackLayout Padding = "5" Grid.Row = "0" Grid.Column = "0" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Horizontal">
+						<Image x:Name = "BackBtn" Source = "back_button.png" HorizontalOptions = "Start" WidthRequest = "30" HeightRequest = "30"/>
+					</StackLayout>
+					<StackLayout x:Name = "LogoLayout" Grid.Row = "0" Grid.Column = "1" HorizontalOptions = "Center" Orientation = "Horizontal" Padding = "10">
+						<Image x:Name = "LogoImage" Source = "refer_logo.png" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand" />
+						<Label x:Name = "TitleLabel" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand" Text = "REFERLOCAL" TextColor = "White"
+							HorizontalTextAlignment = "Start" FontSize = "17" FontAttributes = "Bold">
+							<Label.FontFamily>
+								<OnPlatform x:TypeArguments = "x:String">
+									<OnPlatform.iOS>Roboto-Regular</OnPlatform.iOS>
+									<OnPlatform.Android>Roboto-Regular.ttf</OnPlatform.Android>
+								</OnPlatform>
+							</Label.FontFamily>
+							
+						</Label>
+					</StackLayout>
+				</Grid>
+			</StackLayout>
+
+			<StackLayout x:Name = "ContentViewLayout" Orientation = "Vertical" VerticalOptions = "FillAndExpand" HorizontalOptions = "FillAndExpand"
+					RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}"
+					RelativeLayout.HeightConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Height, Factor = 1, Constant = 0}"
+					RelativeLayout.XConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 0, Constant = 0}"
+					RelativeLayout.YConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Y, Factor = 1, Constant = 64}" >
+
+				<WebView HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Source = "http://vip.referlocal.com/pick-plan">
+
+					
+				</WebView>
+			</StackLayout>
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local = "clr-namespace:ReferLocal"
+		x:Class="ReferLocal.HomePage">
+	<ContentPage.Content>
+
+
+		<RelativeLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+
+			<StackLayout x:Name = "NavigationBarLayout" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" HeightRequest = "64"
+					Orientation = "Horizontal" RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}"
+					BackgroundColor = "#1269b0">
+
+				<Grid x:Name = "NavigationBarGrid" VerticalOptions = "FillAndExpand" HorizontalOptions = "FillAndExpand" 
+						RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}">
+
+					<Grid.RowDefinitions>
+						<RowDefinition Height = "1*" />
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width = "0.7*" />
+						<ColumnDefinition Width = "2*" />
+						<ColumnDefinition Width = "0.7*" />
+					</Grid.ColumnDefinitions>
+
+					<Button x:Name = "LeftBarButton" Grid.Row = "0" Grid.Column = "0" HorizontalOptions = "Start" HeightRequest = "30" WidthRequest = "30"/>
+					<StackLayout x:Name = "LogoLayout" Grid.Row = "0" Grid.Column = "1" HorizontalOptions = "Center" Orientation = "Horizontal" Padding = "10">
+						<Image x:Name = "LogoImage" Source = "refer_logo.png" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand" />
+						<Label x:Name = "TitleLabel" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand" Text = "REFERLOCAL" TextColor = "White"
+							HorizontalTextAlignment = "Start" FontSize = "17" FontAttributes = "Bold">
+
+							<Label.FontFamily>
+								<OnPlatform x:TypeArguments = "x:String">
+									<OnPlatform.iOS>Roboto-Regular</OnPlatform.iOS>
+									<OnPlatform.Android>Roboto-Regular.ttf</OnPlatform.Android>
+								</OnPlatform>
+							</Label.FontFamily>
+							
+						</Label>
+					</StackLayout>
+
+				</Grid>
+						
+			
+
+			</StackLayout>
+
+			<StackLayout x:Name = "ContentViewLayout" Orientation = "Vertical" VerticalOptions = "FillAndExpand" HorizontalOptions = "FillAndExpand" 
+					BackgroundColor = "White"
+					RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}"
+					RelativeLayout.HeightConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Height, Factor = 1, Constant = -120}"
+					RelativeLayout.XConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 0, Constant = 0}"
+					RelativeLayout.YConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Y, Factor = 1, Constant = 64}">
+
+
+				
+			</StackLayout>
+
+			<StackLayout x:Name = "TabBarLayout" Orientation = "Horizontal" VerticalOptions = "FillAndExpand" BackgroundColor = "#e6e7e9" 
+					HorizontalOptions = "FillAndExpand" HeightRequest = "46" Padding = "5"
+					RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}"
+					RelativeLayout.XConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 0, Constant = 0}"
+					RelativeLayout.YConstraint = "{ConstraintExpression Type = RelativeToView,ElementName = ContentViewLayout, Property = Height, Factor = 1, Constant = 64}">
+
+				<!--<Grid x:Name = "TabBarGrid" HorizontalOptions = "Center"
+						RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1}">
+
+					<Grid.RowDefinitions>
+						<RowDefinition Height = "1*"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width = "1*" />
+						<ColumnDefinition Width = "1*" />
+						<ColumnDefinition Width = "1*" />
+						<ColumnDefinition Width = "1*" />
+					</Grid.ColumnDefinitions>
+
+					<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical" Spacing = "0" 
+							Grid.Row = "0" Grid.Column = "0" Padding = "0">
+						<Button x:Name = "currentDealBtn" Image = "deal-icon-fill.png" HorizontalOptions = "Center" VerticalOptions = "Start"/>
+						<Label x:Name = "currentDealLabel" Text = "CURRENTDEAL" TextColor = "Black" FontSize = "6" VerticalOptions = "End" />
+					</StackLayout>
+					
+					<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical" Spacing = "0" 
+							Grid.Row = "0" Grid.Column = "1" Padding = "0">
+						<Button x:Name = "myCartBtn" Image = "cart-icon-empty.png" HorizontalOptions = "Center" VerticalOptions = "Start"/>
+						<Label x:Name = "myCartLabel" Text = "MY CART" TextColor = "Black" FontSize = "6" VerticalOptions = "End" />
+					</StackLayout>
+					
+					<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical" Spacing = "0" 
+							Grid.Row = "0" Grid.Column = "2" Padding = "0">
+						<Button x:Name = "myDealBtn" Image = "my-deals-icon-empty.png" HorizontalOptions = "Center" VerticalOptions = "Start"/>
+						<Label x:Name = "myhDealLabel" Text = "MY DEAL" TextColor = "Black" FontSize = "6" VerticalOptions = "End" />
+					</StackLayout>
+					
+					<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical" Spacing = "0" 
+							Grid.Row = "0" Grid.Column = "3" Padding = "0">
+						<Button x:Name = "accountBtn" Image = "account-icon-empty.png" HorizontalOptions = "Center" VerticalOptions = "Start"/>
+						<Label x:Name = "accountLabel" Text = "ACCOUNT" TextColor = "Black" FontSize = "6" VerticalOptions = "End" />
+					</StackLayout>
+					
+				</Grid>
+-->
+			</StackLayout>
+
+
+		</RelativeLayout>
+
+		
+	</ContentPage.Content>
+</local:BaseContentPage>

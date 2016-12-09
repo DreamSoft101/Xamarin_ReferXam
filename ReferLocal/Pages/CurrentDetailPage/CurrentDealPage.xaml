@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		     x:Class="ReferLocal.CurrentDealPage"
+		xmlns:local = "clr-namespace:ReferLocal">
+	<ContentPage.Content>
+
+		<AbsoluteLayout>
+
+			<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical" AbsoluteLayout.LayoutBounds = "0,0,1, 1"
+					AbsoluteLayout.LayoutFlags = "SizeProportional">
+				<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+					<Grid.RowDefinitions>
+						<RowDefinition Height = "1*"/>
+						<RowDefinition Height = "0"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width = "1*" />
+					</Grid.ColumnDefinitions>
+
+					<ListView x:Name = "offerListView" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "0">
+
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<local:DealCell>
+								</local:DealCell>
+
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+					
+					<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "1" Grid.Column = "0">
+						<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+							<Grid.RowDefinitions>
+								<RowDefinition  Height = "70"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width = "1*"/>
+							</Grid.ColumnDefinitions>
+							<!--<Button x:Name = "addCartBtn" Image = "add_to_cart_button.png" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand"
+								Grid.Row = "0" Grid.Column = "0"/>-->
+							
+						</Grid>
+					</StackLayout>
+				</Grid>
+
+			</StackLayout>
+			<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" AbsoluteLayout.LayoutBounds = ".5, 0.95, 1, .1"
+					AbsoluteLayout.LayoutFlags = "All" BackgroundColor = "Transparent">
+				<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "Transparent">
+					<Grid.RowDefinitions>
+						<RowDefinition  Height = "70"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width = "1*"/>
+					</Grid.ColumnDefinitions>
+					<Image  x:Name = "addCartBtn" Source = "add_to_cart_button.png" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand"
+						Grid.Row = "0" Grid.Column = "0" BackgroundColor = "Transparent" />
+					
+				</Grid>
+			</StackLayout>
+		</AbsoluteLayout>
+
+		
+
+	</ContentPage.Content>
+</ContentPage>

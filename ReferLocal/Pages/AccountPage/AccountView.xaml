@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--local:BaseContentView-->
+<local:BaseContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ReferLocal.AccountView"
+		xmlns:local = "clr-namespace:ReferLocal">
+	<ContentView.Content>
+		<ScrollView>
+
+			<RelativeLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+
+				<StackLayout x:Name = "nameLayout" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand"
+						RelativeLayout.XConstraint = "{ConstraintExpression Type = RelativeToParent, Property = X, Factor = 1, Constant = 20}"
+						RelativeLayout.YConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Y, Factor = 1, Constant = 20}"
+						RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = -40}"
+						BackgroundColor = "#dadada" Padding = "1">
+
+					<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "Fill" BackgroundColor = "#e6e7e9" Padding = "0" >
+
+						<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" RowSpacing = "1">
+							<Grid.RowDefinitions>
+								<RowDefinition Height = "2*"/>
+								<RowDefinition Height = "1*"/>
+								<RowDefinition Height = "1*"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width = "1*"/>
+							</Grid.ColumnDefinitions>
+
+							<StackLayout HorizontalOptions = "Fill" VerticalOptions = "Start" Orientation = "Vertical" Padding = "0, 20, 0, 20" Grid.Row = "0" Grid.Column = "0">
+								<Image x:Name = "profileImage" Source = "profile_icon.png" HorizontalOptions = "CenterAndExpand" VerticalOptions = "Center" WidthRequest = "50" HeightRequest = "50"/>
+								<Label x:Name = "nameLabel" HorizontalOptions = "CenterAndExpand" VerticalOptions = "Center" HorizontalTextAlignment = "Center" 
+									Text = "DARRYL R. TREAT" TextColor = "#1269b0" FontSize = "18" >
+									<Label.FontFamily>
+										<OnPlatform x:TypeArguments = "x:String">
+											<OnPlatform.iOS>Roboto-Bold</OnPlatform.iOS>
+											<OnPlatform.Android>Roboto-Bold.ttf</OnPlatform.Android>
+										</OnPlatform>
+									</Label.FontFamily>
+								</Label>
+							</StackLayout>
+
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "CenterAndExpand" Orientation = "Horizontal" Padding = "0" 
+									Grid.Row = "1" Grid.Column = "0" >
+
+								<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White">
+									<Grid.RowDefinitions>
+										<RowDefinition Height = "1*"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width = "1*"/>
+										<ColumnDefinition Width = "1*"/>
+									</Grid.ColumnDefinitions>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "0"
+											Orientation = "Horizontal" Padding = "20, 0, 20, 0">
+										<Label Text = "EMAIL" TextColor = "#b0b0b0" FontSize = "14" HorizontalOptions = "StartAndExpand" VerticalOptions = "Center" />
+									</StackLayout>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "2" Orientation = "Horizontal"
+											Padding = "0, 0, 20 , 0">
+										<Button x:Name = "emailAccessoryBtn" Image = "accessory_button.png" HorizontalOptions = "EndAndExpand" VerticalOptions = "Center" WidthRequest = "30" HeightRequest = "30"/>	
+									</StackLayout>
+								</Grid>
+
+							</StackLayout>
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "Center" Orientation = "Horizontal" Padding = "0" 
+									Grid.Row = "2" Grid.Column = "0" >
+
+								<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White">
+									<Grid.RowDefinitions>
+										<RowDefinition Height = "1*"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width = "1*"/>
+										<ColumnDefinition Width = "1*"/>
+									</Grid.ColumnDefinitions>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "0"
+											Orientation = "Horizontal" Padding = "20, 0, 20, 0">
+										<Label Text = "PAYMENT" TextColor = "#b0b0b0" FontSize = "14" HorizontalOptions = "StartAndExpand" VerticalOptions = "Center" />
+									</StackLayout>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "1" Orientation = "Horizontal"
+											Padding = "0, 0, 20 , 0">
+										<Button x:Name = "paymentAccessoryBtn" Image = "accessory_button.png" HorizontalOptions = "EndAndExpand" VerticalOptions = "Center" WidthRequest = "30" HeightRequest = "30"/>	
+									</StackLayout>
+								</Grid>
+							</StackLayout>
+						</Grid>
+					</StackLayout>
+
+				</StackLayout>
+
+				<StackLayout x:Name = "descriptionLayout" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand"
+						RelativeLayout.YConstraint = "{ConstraintExpression Type = RelativeToView, 
+							ElementName = nameLayout, Property = Height, Factor = 1.01, Constant = 20}"
+						RelativeLayout.XConstraint = "{ConstraintExpression Type = RelativeToParent, 
+							Property = X, Factor = 1, Constant = 0}"
+						RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1}"
+						Padding = "50, 10" >
+					<Label Text = "How would you like to be notified of new offers and deals from Mohegan Sun Pocono?" FontSize = "10" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand"
+							HorizontalTextAlignment = "Center" LineBreakMode = "WordWrap">
+						<Label.FontFamily>
+							<OnPlatform x:TypeArguments = "x:String">
+								<OnPlatform.iOS>Roboto-Regular</OnPlatform.iOS>
+								<OnPlatform.Android>Roboto-Regular.ttf</OnPlatform.Android>
+							</OnPlatform>
+						</Label.FontFamily>
+					</Label>
+				</StackLayout>
+
+				<!-- logout -->
+				<StackLayout x:Name = "logoutLayout" HorizontalOptions = "Fill" VerticalOptions = "Center" 
+						RelativeLayout.YConstraint = "{ConstraintExpression Type = RelativeToView, 
+							ElementName = selectionLayout, Property = Y , Factor = 1.4, Constant = 0}"
+						RelativeLayout.XConstraint = "{ConstraintExpression Type = RelativeToParent, 
+							Property = X, Factor = 1, Constant = 0}"
+						RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent,
+							Property = Width, Factor = 1}" 
+						HeightRequest = "100" Orientation = "Horizontal">
+
+					<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+						<Grid.RowDefinitions>
+							<RowDefinition Height = "1*"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width = "1*"/>
+						</Grid.ColumnDefinitions>
+						<Button x:Name = "logoutBtn" Image = "log_out_button.png"  HorizontalOptions = "FillAndExpand" 
+							VerticalOptions = "Fill" Grid.Column = "0" Grid.Row = "0"/>
+
+					</Grid>
+							
+				</StackLayout>
+				<!-- checkbox -->
+				<StackLayout x:Name = "selectionLayout" HorizontalOptions = "FillAndExpand" VerticalOptions = "CenterAndExpand" Padding = "20, 0"
+						RelativeLayout.YConstraint = "{ConstraintExpression Type = RelativeToView, 
+							ElementName = descriptionLayout, Property = Y , Factor = 1.18, Constant = 0}"
+						RelativeLayout.XConstraint = "{ConstraintExpression Type = RelativeToParent, 
+							Property = X, Factor = 1, Constant = 0}"
+						RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, 
+							Property = Width, Factor = 1, Constant = 0}">
+
+					<StackLayout  HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Padding = "1,1"
+						BackgroundColor = "#dadada">
+						<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" ColumnSpacing = "1"
+								RowSpacing = "1">
+							<Grid.RowDefinitions>
+								<RowDefinition Height = "1*"/>
+								<RowDefinition Height = "1*"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width = "1*"/>
+								<ColumnDefinition Width = "1*"/>
+							</Grid.ColumnDefinitions>
+
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "Center" Orientation = "Horizontal" Padding = "0" 
+										Grid.Row = "0" Grid.Column = "0" >
+
+								<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White">
+									<Grid.RowDefinitions>
+										<RowDefinition Height = "1*"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width = "2*"/>
+										<ColumnDefinition Width = "1*"/>
+									</Grid.ColumnDefinitions>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "0"
+											Orientation = "Horizontal" Padding = "10, 20, 0, 20">
+										<Label Text = "EMAIL" TextColor = "#b0b0b0" FontSize = "12" HorizontalOptions = "FillAndExpand" VerticalOptions = "Center" />
+									</StackLayout>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "1" Orientation = "Horizontal"
+											Padding = "0, 10, 10 , 10">
+										<Button x:Name = "emailCheckBtn" Image = "preferences_box.png" HorizontalOptions = "EndAndExpand" VerticalOptions = "Center" WidthRequest = "20" HeightRequest = "20"/>	
+									</StackLayout>
+								</Grid>
+							</StackLayout>
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "Center" Orientation = "Horizontal" Padding = "0" 
+										Grid.Row = "0" Grid.Column = "1" >
+
+								<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White">
+									<Grid.RowDefinitions>
+										<RowDefinition Height = "1*"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width = "4*"/>
+										<ColumnDefinition Width = "1*"/>
+									</Grid.ColumnDefinitions>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "0"
+											Orientation = "Horizontal" Padding = "10, 0, 0, 0">
+										<Label Text = "TEXT MESSAGE" TextColor = "#b0b0b0" FontSize = "12" HorizontalOptions = "FillAndExpand" VerticalOptions = "Center" />
+									</StackLayout>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "1" Orientation = "Horizontal"
+											Padding = "0, 0, 10 , 0">
+										<Button x:Name = "messageCheckBtn" Image = "preferences_box.png" HorizontalOptions = "EndAndExpand" VerticalOptions = "Center" WidthRequest = "20" HeightRequest = "20"/>	
+									</StackLayout>
+								</Grid>
+							</StackLayout>
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "Center" Orientation = "Horizontal" Padding = "0" 
+										Grid.Row = "1" Grid.Column = "0" >
+
+								<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White">
+									<Grid.RowDefinitions>
+										<RowDefinition Height = "1*"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width = "2.5*"/>
+										<ColumnDefinition Width = "1*"/>
+									</Grid.ColumnDefinitions>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "0"
+											Orientation = "Horizontal" Padding = "10, 0, 0, 0">
+										<Label Text = "PHONE CALL" TextColor = "#b0b0b0" FontSize = "12" HorizontalOptions = "FillAndExpand" VerticalOptions = "Center" />
+									</StackLayout>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "2" Orientation = "Horizontal"
+											Padding = "0, 0, 10 , 0">
+										<Button x:Name = "callCheckBtn" Image = "preferences_box.png" HorizontalOptions = "EndAndExpand" VerticalOptions = "Center" WidthRequest = "20" HeightRequest = "20"/>	
+									</StackLayout>
+								</Grid>
+							</StackLayout>
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "Center" Orientation = "Horizontal" Padding = "0" 
+										Grid.Row = "1" Grid.Column = "1" >
+
+								<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White">
+									<Grid.RowDefinitions>
+										<RowDefinition Height = "1*"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width = "3*"/>
+										<ColumnDefinition Width = "1*"/>
+									</Grid.ColumnDefinitions>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "0"
+											Orientation = "Horizontal" Padding = "10, 0, 0, 0">
+										<Label Text = "DIRECT EMAIL" TextColor = "#b0b0b0" FontSize = "12" HorizontalOptions = "FillAndExpand" VerticalOptions = "Center" />
+									</StackLayout>
+									<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "2" Orientation = "Horizontal"
+											Padding = "0, 0, 10 , 0">
+										<Button x:Name = "mailCheckBtn" Image = "preferences_box.png" HorizontalOptions = "EndAndExpand" VerticalOptions = "Center" WidthRequest = "20" HeightRequest = "20"/>	
+									</StackLayout>
+								</Grid>
+							</StackLayout>
+						</Grid>
+					</StackLayout>
+				</StackLayout>
+
+				
+				
+			</RelativeLayout>
+
+		</ScrollView>
+	</ContentView.Content>
+</local:BaseContentView>

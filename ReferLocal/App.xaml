@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ReferLocal.App">
+	<Application.Resources>
+		<!-- Application resource dictionary -->
+		<!--<Style TargetType = "ContentPage">
+			<Setter Property = "BackgroundColor" Value = "#9B28E5" />
+		</Style>-->
+		
+	</Application.Resources>
+</Application>

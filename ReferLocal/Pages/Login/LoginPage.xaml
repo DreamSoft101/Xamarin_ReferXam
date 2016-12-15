@@ -28,12 +28,12 @@
 				</Grid.ColumnDefinitions>
 				
 				<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Padding ="0" Spacing = "0"  Grid.Row = "0" Grid.Column = "0">
-					<Label Text = "REFERLOCAL" TextColor = "White" HorizontalTextAlignment = "Center" Font = "40" FontAttributes ="Bold"
+					<Label Text = "REFERLOCAL" TextColor = "White" HorizontalTextAlignment = "Center" Font = "40" 
 						HorizontalOptions = "FillAndExpand" VerticalOptions = "CenterAndExpand">
 						<Label.FontFamily>
 							<OnPlatform x:TypeArguments = "x:String">
-								<OnPlatform.iOS>Roboto-Regular</OnPlatform.iOS>
-								<OnPlatform.Android>Roboto-Regular.ttf</OnPlatform.Android>
+								<OnPlatform.iOS>Gotham Bold</OnPlatform.iOS>
+								<OnPlatform.Android>Gotham Bold.ttf</OnPlatform.Android>
 							</OnPlatform>
 						</Label.FontFamily>
 					</Label>

@@ -38,9 +38,9 @@ namespace ReferLocal
 		public  async void OnSignInBtnClicked( object sender, EventArgs e)
 		{
 
-			//App.GoToHome();
+			App.GoToHome();
 
-			//return;
+			return;
 			if (!string.IsNullOrEmpty(emailTxtField.Text) && !string.IsNullOrEmpty(passwordTxtField.Text))
 			{
 				MyProgressModel.Show("Signing..");
@@ -48,7 +48,19 @@ namespace ReferLocal
 
 				MyProgressModel.Hide();
 
-				App.GoToHome();
+				if (result is LoginSuccessDataModel)
+				{
+					var successData = (LoginSuccessDataModel)result;
+
+					AppManager.sharedInstance().tokenString = successData.token;
+					App.GoToHome();
+
+				}
+				else {
+					await DisplayAlert("Error", "Login failed. Try again later.", "OK");
+
+				}
+
 			}
 			else {
 
@@ -67,13 +79,16 @@ namespace ReferLocal
 			await Navigation.PushAsync(new RegisterPage());
 		}
 
-		public async void OnForgotBtnClicked(object sender, EventArgs e)
+		public void OnForgotBtnClicked(object sender, EventArgs e)
 		{
 			
 		}
 
-		public async void OnGuestBtnClicked(object sender, EventArgs e)
+		public  void OnGuestBtnClicked(object sender, EventArgs e)
 		{
+
+			AppManager.sharedInstance().loggedAsGuest = true;
+
 			App.GoToHome();
 		}
 		private bool checkInputValue()

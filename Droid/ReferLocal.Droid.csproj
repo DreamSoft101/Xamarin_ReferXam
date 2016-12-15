@@ -127,6 +127,9 @@
     <Reference Include="PCL.Utils.Droid">
       <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\MonoAndroid10\PCL.Utils.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="BottomNavigationBar">
+      <HintPath>..\packages\BottomNavigationBar.1.4.0.2\lib\MonoAndroid403\BottomNavigationBar.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReferLocal\ReferLocal.csproj">
@@ -141,6 +144,7 @@
     <Compile Include="Renderer\CustomEntryRenderer.cs" />
     <Compile Include="Renderer\MyButtonRenderer.cs" />
     <Compile Include="Renderer\HtmlLabelRenderer.cs" />
+    <Compile Include="Renderer\MainPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -165,6 +169,7 @@
     <None Include="Resources\drawable\font\RobotoCondensed-Light.ttf" />
     <None Include="Resources\drawable\font\RobotoCondensed-LightItalic.ttf" />
     <None Include="Resources\drawable\font\RobotoCondensed-Regular.ttf" />
+    <None Include="Resources\drawable\font\gotham-bold.ttf" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -195,6 +200,7 @@
     <AndroidResource Include="Resources\drawable\profile_icon.png" />
     <AndroidResource Include="Resources\drawable\refer_logo.png" />
     <AndroidResource Include="Resources\drawable\home_screen_bckgd.jpg" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderer\" />

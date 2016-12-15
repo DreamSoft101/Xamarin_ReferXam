@@ -38,12 +38,15 @@ namespace ReferLocal
 		//Sign
 		public async Task<object> SignInAsync(string email, string password)
 		{
+
+			var dict = new LoginSuccessDataModel();
+
 			var url = Constants.API_SIGNIN;
 
 			Dictionary<string, string> pairs = new Dictionary<string, string>();
 
-			pairs.Add("email", email);
-			pairs.Add("password", password);
+			pairs.Add("identity", email);
+			pairs.Add("credential", password);
 
 			FormUrlEncodedContent formContent = new FormUrlEncodedContent(pairs);
 
@@ -60,10 +63,21 @@ namespace ReferLocal
 
 					var json = Newtonsoft.Json.Linq.JObject.Parse(result);
 
+					if (!isErrorReturned(json))
+					{
+						var data = JsonConvert.SerializeObject(json);
 
+						Debug.WriteLine(data);
+						dict = (LoginSuccessDataModel)JsonConvert.DeserializeObject(data, typeof(LoginSuccessDataModel));
 
+						return dict;
 
-					Debug.WriteLine(json);
+					}
+					else {
+
+						return false;
+					}
+
 
 				}
 				else {
@@ -80,7 +94,6 @@ namespace ReferLocal
 				return ex.Message;
 			}
 
-			return true;
 		}
 
 		public async Task<object> GetOffers() 

@@ -48,7 +48,7 @@ namespace ReferLocal
 		public static void GoToHome()
 		{
 			//CurrentApp.MainPage = new HomePage(1);
-			CurrentApp.MainPage = new RootTabPage();
+			CurrentApp.MainPage = new NavigationPage(new RootTabPage());
 		}
 
 		static async Task ShowNetworkConnectionAlert()

@@ -167,6 +167,7 @@
       <DependentUpon>DealCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\HtmlLabel.cs" />
+    <Compile Include="Models\LoginSuccessDataModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.Connectivity.Abstractions">

@@ -55,6 +55,15 @@ namespace ReferLocal
 					activeChild.OnLeftBarButtonClicked(sender, e);
 			}
 		}
+		public void SendAppearing()
+		{
+			OnAppearing();
+		}
+
+		public void SendDisappearing()
+		{
+			OnDisappearing();
+		}
 	}
 }
 

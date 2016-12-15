@@ -92,6 +92,8 @@ namespace ReferLocal
 	{
 		public RootTabPage()
 		{
+			NavigationPage.SetHasNavigationBar(this, false);
+
 			Children.Add(new RLNavigationPage(new CurrentDealPage
 			{
 				Title = "REFERLOCAL",

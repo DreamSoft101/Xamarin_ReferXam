@@ -30,6 +30,8 @@ namespace ReferLocal.iOS
 				var myHtmlData = NSData.FromString(Element.Text, NSStringEncoding.Unicode);
 
 				Control.Lines = 0;
+				//Control.Font = UIFont.SystemFontOfSize(26);
+
 				Control.AttributedText = new NSAttributedString(myHtmlData, attr, ref nsError);
 			}
 
@@ -53,6 +55,7 @@ namespace ReferLocal.iOS
 					var myHtmlData = NSData.FromString(Element.Text, NSStringEncoding.Unicode);
 
 					Control.Lines = 0;
+					//Control.Font = UIFont.SystemFontOfSize(26);
 					Control.AttributedText = new NSAttributedString(myHtmlData, attr, ref nsError);
 				}
 			}

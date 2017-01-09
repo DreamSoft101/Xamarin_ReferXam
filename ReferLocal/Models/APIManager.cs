@@ -450,31 +450,58 @@ namespace ReferLocal
 
 		//Get Deal
 
-		public async Task<object> GetMyDeal()
+		public async Task<object> GetOrderByToken()
 		{
-			var url = Constants.API_GETMYDEAL + AppManager.sharedInstance().tokenString;
+			var dict = new List<Order>();
+
+			var url = Constants.API_GETORDER + AppManager.sharedInstance().tokenString;
 
 			var uri = new Uri(string.Format(url));
 
 			try
 			{
-
 				var response = await client.GetAsync(uri);
 
 				if (response.IsSuccessStatusCode)
 				{
 					var result = await response.Content.ReadAsStringAsync();
-					var json = Newtonsoft.Json.Linq.JObject.Parse(result);
+					string jsonDataStr = "{ 'data' : " + result + "}";
+
+					//hud.Dismiss();
+
+					var json = Newtonsoft.Json.Linq.JObject.Parse(jsonDataStr);
+					Debug.WriteLine(json);
+
+
+					if (!isErrorReturned(json))
+					{
+						var data = JsonConvert.SerializeObject(json["data"]);
+						Debug.WriteLine(data);
+
+						dict = (List<Order>)JsonConvert.DeserializeObject(data, typeof(List<Order>));
+
+						Debug.WriteLine(dict);
+					}
+					else {
+
+						return false;
+					}
+				}
+				else {
+
+					Debug.WriteLine(@"Request Failed");
+
+					return false;
 				}
 			}
-			catch (Exception ex) {
-
+			catch (Exception ex)
+			{
 				Debug.WriteLine(@"Error {0}", ex.Message);
 
 				return ex.Message;
 			}
 
-			return true;
+			return dict;
 		}
 
 
@@ -495,8 +522,27 @@ namespace ReferLocal
 
 				if (response.IsSuccessStatusCode)
 				{
+					var result = await response.Content.ReadAsStringAsync();
+					string jsonDataStr = "{ 'data' : " + result + "}";
 
-				}
+					//hud.Dismiss();
+
+					var json = Newtonsoft.Json.Linq.JObject.Parse(jsonDataStr);
+
+
+					if (!isErrorReturned(json))
+					{
+						var data = JsonConvert.SerializeObject(json["data"]);
+						Debug.WriteLine(data);
+
+						dict = (List<Order>)JsonConvert.DeserializeObject(data, typeof(List<Order>));
+
+						Debug.WriteLine(dict);
+					}
+					else {
+
+						return false;
+					}				}
 				else {
 					
 					Debug.WriteLine(@"Request Failed");

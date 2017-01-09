@@ -3,17 +3,6 @@
 		BackgroundImage = "bg_login.png" xmlns:local = "clr-namespace:ReferLocal">
 	<ContentPage.Content>
 
-		<!--<RelativeLayout >
-			<Image HorizontalOptions = "FillAndExpand" Source = "home-screen-bckgd.jpg" Aspect = "AspectFill" 
-				RelativeLayout.XConstraint = "{ ConstraintExpression Type = RelativeToParent, Property = X, Factor = 1, Constant = 0}"
-				RelativeLayout.YConstraint = "{ ConstraintExpression Type = RelativeToParent, Property = Y, Factor = 1, Constant = 0}"
-				RelativeLayout.WidthConstraint = "{ ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}"
-				RelativeLayout.HeightConstraint = "{ ConstraintExpression Type = RelativeToParent, Property = Height, Factor = 1, Constant = 0}"
-				/>
-			<Label HorizontalTextAlignment = "Center" Text = "REFERLOCAL" FontAttributes = "Bold" TextColor = "White" 
-				RelativeLayout.YConstraint = "{ ConstraintExpression Type = RelativeToParent, Property = Y, Factor = 1, Constant = 35}"/>
-
-		</RelativeLayout>-->
 		<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" >
 
 			<Grid VerticalOptions = "FillAndExpand" HorizontalOptions = "FillAndExpand">
@@ -31,11 +20,12 @@
 					<Label Text = "REFERLOCAL" TextColor = "White" HorizontalTextAlignment = "Center" Font = "40" 
 						HorizontalOptions = "FillAndExpand" VerticalOptions = "CenterAndExpand">
 						<Label.FontFamily>
-							<OnPlatform x:TypeArguments = "x:String">
-								<OnPlatform.iOS>Gotham Bold</OnPlatform.iOS>
-								<OnPlatform.Android>Gotham Bold.ttf</OnPlatform.Android>
-							</OnPlatform>
-						</Label.FontFamily>
+					        <OnPlatform x:TypeArguments="x:String">
+					            <OnPlatform.iOS>Gotham Bold</OnPlatform.iOS>
+					            <OnPlatform.Android>gotham_bold.ttf</OnPlatform.Android>
+					            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+					        </OnPlatform>
+					    </Label.FontFamily>
 					</Label>
 				</StackLayout>
 

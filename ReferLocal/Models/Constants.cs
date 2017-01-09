@@ -17,5 +17,8 @@ namespace ReferLocal
 		public static string API_CHECKOUT = "https://deals.referlocal.com/rlapi/cart/checkout";
 		public static string API_GETORDER = "https://deals.referlocal.com/rlapi/voucher?token=";
 
+		public static string API_BARCODELINK = "https://deals.referlocal.com/rlapi/voucher/print/";
+		public static string API_ACCOUNT_SETTING = "https://deals.referlocal.com/#/app-settings/";
+
 	}
 }

@@ -31,6 +31,7 @@ namespace ReferLocal.iOS
 		{
 			
 			Control.BackgroundColor = UIColor.Clear;
+			Control.BorderStyle = UITextBorderStyle.None;
 		}
 	}
 }

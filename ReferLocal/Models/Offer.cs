@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Xamarin.Forms;
+using Rg.Plugins.Popup.Extensions;
+
 
 namespace ReferLocal
 {
@@ -43,8 +45,7 @@ namespace ReferLocal
 
 		public HtmlWebViewSource DescriptionHtml { 
 			get 
-			{ 
-
+			{
 				string htmlText = description.ToString().Replace(@"\", string.Empty);
 				var html = new HtmlWebViewSource
 				{
@@ -99,6 +100,37 @@ namespace ReferLocal
 		async Task ExecuteSendButtonTappedCommand()
 		{
 			await APIManager.sharedInstance().AddGiftOfferToCart(this.id, "1", "recipient");
+		}
+
+		ICommand _AddCartButtonTappedCommand;
+
+		public ICommand AddCartButtonTappedCommand
+		{
+			get
+			{
+				return _AddCartButtonTappedCommand ?? (_AddCartButtonTappedCommand = new Command(async () => await ExecuteAddCartButtonTappedCommand()));
+			}
+		}
+
+		async Task ExecuteAddCartButtonTappedCommand()
+		{
+			MyProgressModel.Show("Adding..");
+			var result = await APIManager.sharedInstance().AddOfferToCart(this.id, "1");
+			MyProgressModel.Hide();
+
+			Debug.WriteLine(result);
+
+			if (result is Boolean)
+			{
+				if (!(Boolean)result)
+				{
+				}
+				else {
+
+					MessagingCenter.Send<MyCartPage>(RootTabPage.sharedRootPage().myCartPage, "Success");
+				}
+			}
+
 		}
 
 	}

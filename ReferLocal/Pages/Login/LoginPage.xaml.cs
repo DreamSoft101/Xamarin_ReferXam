@@ -39,7 +39,6 @@ namespace ReferLocal
 		{
 
 			App.GoToHome();
-
 			return;
 			if (!string.IsNullOrEmpty(emailTxtField.Text) && !string.IsNullOrEmpty(passwordTxtField.Text))
 			{

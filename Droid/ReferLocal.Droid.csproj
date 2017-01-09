@@ -130,11 +130,34 @@
     <Reference Include="BottomNavigationBar">
       <HintPath>..\packages\BottomNavigationBar.1.4.0.2\lib\MonoAndroid403\BottomNavigationBar.dll</HintPath>
     </Reference>
+    <Reference Include="Stripe">
+      <HintPath>..\Components\stripe-1.0.7\lib\android\Stripe.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReferLocal\ReferLocal.csproj">
       <Project>{1596E4B2-0893-48C3-882D-5C9DECD73BA6}</Project>
       <Name>ReferLocal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net.Mobile.Android\ZXing.Net.Mobile.Android.csproj">
+      <Project>{AC17589E-C817-4FA8-B3EC-CCEB25E55E59}</Project>
+      <Name>ZXing.Net.Mobile.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net.Mobile.Core\ZXing.Net.Mobile.Core.csproj">
+      <Project>{7528DD0A-1781-47F4-ADBF-EEDDB011F6BB}</Project>
+      <Name>ZXing.Net.Mobile.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net.Mobile.Forms\ZXing.Net.Mobile.Forms.csproj">
+      <Project>{8E54DB74-C094-4016-859A-D1C7F2509A58}</Project>
+      <Name>ZXing.Net.Mobile.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net.Mobile.Forms.Android\ZXing.Net.Mobile.Forms.Android.csproj">
+      <Project>{DC2FF2AE-4090-4056-BBE4-087BDE6567BD}</Project>
+      <Name>ZXing.Net.Mobile.Forms.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net\zxing.portable.csproj">
+      <Project>{24B441F2-CBE9-4405-9FD0-72EBCBEA0EC3}</Project>
+      <Name>zxing.portable</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -145,31 +168,13 @@
     <Compile Include="Renderer\MyButtonRenderer.cs" />
     <Compile Include="Renderer\HtmlLabelRenderer.cs" />
     <Compile Include="Renderer\MainPageRenderer.cs" />
+    <Compile Include="Renderer\CreditCardInputPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="packages.config" />
-    <None Include="Resources\drawable\font\Roboto-Black.ttf" />
-    <None Include="Resources\drawable\font\Roboto-BlackItalic.ttf" />
-    <None Include="Resources\drawable\font\Roboto-Bold.ttf" />
-    <None Include="Resources\drawable\font\Roboto-BoldItalic.ttf" />
-    <None Include="Resources\drawable\font\Roboto-Italic.ttf" />
-    <None Include="Resources\drawable\font\Roboto-Light.ttf" />
-    <None Include="Resources\drawable\font\Roboto-LightItalic.ttf" />
-    <None Include="Resources\drawable\font\Roboto-Medium.ttf" />
-    <None Include="Resources\drawable\font\Roboto-MediumItalic.ttf" />
-    <None Include="Resources\drawable\font\Roboto-Regular.ttf" />
-    <None Include="Resources\drawable\font\Roboto-Thin.ttf" />
-    <None Include="Resources\drawable\font\Roboto-ThinItalic.ttf" />
-    <None Include="Resources\drawable\font\RobotoCondensed-Bold.ttf" />
-    <None Include="Resources\drawable\font\RobotoCondensed-BoldItalic.ttf" />
-    <None Include="Resources\drawable\font\RobotoCondensed-Italic.ttf" />
-    <None Include="Resources\drawable\font\RobotoCondensed-Light.ttf" />
-    <None Include="Resources\drawable\font\RobotoCondensed-LightItalic.ttf" />
-    <None Include="Resources\drawable\font\RobotoCondensed-Regular.ttf" />
-    <None Include="Resources\drawable\font\gotham-bold.ttf" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -201,9 +206,21 @@
     <AndroidResource Include="Resources\drawable\refer_logo.png" />
     <AndroidResource Include="Resources\drawable\home_screen_bckgd.jpg" />
     <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\drawable\gotham_bold.ttf" />
+    <AndroidResource Include="Resources\drawable\Roboto_Black.ttf" />
+    <AndroidResource Include="Resources\drawable\Roboto_Bold.ttf" />
+    <AndroidResource Include="Resources\drawable\Roboto_Light.ttf" />
+    <AndroidResource Include="Resources\drawable\Roboto_Medium.ttf" />
+    <AndroidResource Include="Resources\drawable\Roboto_Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="stripe">
+      <Version>1.0.7</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

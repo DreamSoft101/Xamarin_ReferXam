@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="ReferLocal.StripePaymentPage"
+		xmlns:local = "clr-namespace:ReferLocal">
+	<ContentPage.Content>
+		<RelativeLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+
+
+			<StackLayout x:Name = "NavigationBarLayout" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand"
+					Orientation = "Vertical"
+					RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}"
+					BackgroundColor = "#1269b0" Padding = "0,30,0,10">
+				<StackLayout Padding = "5"  HorizontalOptions = "Start" VerticalOptions = "FillAndExpand" Orientation = "Horizontal">
+						<Image x:Name = "BackBtn" Source = "back_button.png" HorizontalOptions = "Start" WidthRequest = "30" HeightRequest = "30"/>
+				</StackLayout>
+				<Image HorizontalOptions = "CenterAndExpand" VerticalOptions = "Start" Source = "refer_logo.png" WidthRequest = "80" HeightRequest = "80" Aspect = "AspectFit"/>
+				<Label Text = "ReferLocal" FontSize = "19" TextColor = "White" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" VerticalOptions = "Center" HorizontalTextAlignment = "Center"/>
+				<Label Text = "ReferLocal Purchase" FontSize = "16" TextColor = "White" FontAttributes = "None" HorizontalOptions = "CenterAndExpand" VerticalOptions = "Center" HorizontalTextAlignment = "Center"/>
+				
+				
+			</StackLayout>
+
+
+			<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical"
+					RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}"
+					RelativeLayout.XConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 0, Constant = 0}"
+					RelativeLayout.YConstraint = "{ConstraintExpression Type = RelativeToView, 
+							ElementName = NavigationBarLayout, Property = Height, Factor = 1.01, Constant = 10}" 
+					Padding = "15,0" Spacing = "0">
+				<!--<local:StripeView x:Name = "stripeView" HorizontalOptions = "FillAndExpand" VerticalOptions = "StartAndExpand" >
+				</local:StripeView>-->
+
+				<Grid x:Name = "gridLayout" HorizontalOptions = "FillAndExpand" VerticalOptions = "Fill" RowSpacing = "0" ColumnSpacing = "0">
+
+					<Grid.RowDefinitions>
+						<RowDefinition Height = "40"/>
+						<RowDefinition Height = "40"/>
+						<RowDefinition Height = "160"/>
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width = "1*"/>
+					</Grid.ColumnDefinitions>
+
+					<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "0" >
+						<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" RowSpacing = "0" ColumnSpacing = "0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height = "1*"/>
+							</Grid.RowDefinitions>
+
+							<Grid.ColumnDefinitions>
+
+								<ColumnDefinition Width = "30" />
+								<ColumnDefinition Width = "1*" />
+
+							</Grid.ColumnDefinitions>
+							<Image x:Name = "AcountImageView"  WidthRequest = "30" HeightRequest ="30" Grid.Row = "0" Grid.Column = "0"/>
+							<local:CustomEntry x:Name = "emailTxtField" Placeholder = "Email" Keyboard = "Email" FontSize = "14"
+								PlaceholderColor = "Gray" TextColor = "Black" VerticalOptions = "CenterAndExpand" Grid.Row = "0" Grid.Column = "1"/>
+						</Grid>
+
+					</StackLayout>
+
+					<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "1" Grid.Column = "0" >
+						<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" RowSpacing = "0" ColumnSpacing = "0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height = "1*"/>
+							</Grid.RowDefinitions>
+
+							<Grid.ColumnDefinitions>
+
+								<ColumnDefinition Width = "30" />
+								<ColumnDefinition Width = "70" />
+								<ColumnDefinition Width = "1*" />
+								
+
+							</Grid.ColumnDefinitions>
+							<Image x:Name = "xx" WidthRequest = "30"  HeightRequest ="30" VerticalOptions = "CenterAndExpand" Grid.Row = "0" Grid.Column = "0"/>
+							<Label x:Name = "cardLabel" Text = "Card" VerticalOptions = "CenterAndExpand" FontAttributes = "Bold" FontSize = "14" Grid.Row = "0" Grid.Column = "1"/>
+							<local:CustomEntry x:Name = "nameTxtField" Placeholder = "123456789000" PlaceholderColor = "Gray" 
+								TextColor = "Black" VerticalOptions = "CenterAndExpand" Grid.Row = "0" Grid.Column = "2"/>
+						</Grid>
+
+					</StackLayout>
+
+					<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Grid.Row = "2" Grid.Column = "0" >
+						<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" RowSpacing = "0" ColumnSpacing = "0">
+							<Grid.RowDefinitions>
+								<RowDefinition Height = "40"/>
+<!--								<RowDefinition Height = "40"/>-->
+								<RowDefinition Height = "40"/>
+							</Grid.RowDefinitions>
+
+							<Grid.ColumnDefinitions>
+								<!--<ColumnDefinition Width = "30" />
+								<ColumnDefinition Width = "80" />-->
+								<ColumnDefinition Width = "1*" />
+							</Grid.ColumnDefinitions>
+
+							<!--<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Horizontal" Spacing = "0"  Grid.Row = "0" Grid.Column = "0">
+								<Image  WidthRequest = "30" HeightRequest ="30" HorizontalOptions = "Fill" VerticalOptions = "CenterAndExpand"/>
+								<Label x:Name = "addressLabel" Text = "Address" VerticalOptions = "CenterAndExpand" FontAttributes = "Bold" FontSize = "14" WidthRequest = "70"/>
+								<local:CustomEntry x:Name = "addressTxtField" Placeholder = "Street"  FontSize = "14"
+									PlaceholderColor = "Gray" TextColor = "Black" HorizontalOptions = "FillAndExpand" VerticalOptions = "CenterAndExpand"/>
+							</StackLayout>-->
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Horizontal" Spacing = "0" Grid.Row = "1" Grid.Column = "0">
+
+								<Grid>
+
+								</Grid>
+								
+								<Image WidthRequest = "100" HeightRequest ="30" HorizontalOptions = "Fill" VerticalOptions = "CenterAndExpand" />
+								<Label x:Name = "addressLabel" Text = "Address" VerticalOptions = "CenterAndExpand" FontAttributes = "Bold" FontSize = "14" WidthRequest = "70"/>										
+								<local:CustomEntry x:Name = "zipCodeTxtField" Placeholder = "ZIP" Keyboard = "Email" FontSize = "15"
+									PlaceholderColor = "Gray" TextColor = "Black" HorizontalOptions = "FillAndExpand" VerticalOptions = "CenterAndExpand"/>
+								<local:CustomEntry x:Name = "cityTxtField" Placeholder = "CITY" Keyboard = "Email" FontSize = "15"
+									PlaceholderColor = "Gray" TextColor = "Black" HorizontalOptions = "FillAndExpand" VerticalOptions = "CenterAndExpand"/>
+							</StackLayout>
+							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Horizontal" Spacing = "0" Grid.Row = "2" Grid.Column = "0">
+								<Image  WidthRequest = "100" HeightRequest ="30" HorizontalOptions = "Fill" VerticalOptions = "CenterAndExpand" />
+								<local:CustomEntry x:Name = "countryTxtField"   FontSize = "15" Text = "United States" 
+									TextColor = "Black" HorizontalOptions = "FillAndExpand" VerticalOptions = "CenterAndExpand"/>
+							</StackLayout>
+
+						</Grid>
+
+					</StackLayout>
+					
+				</Grid>
+				
+
+			</StackLayout>
+
+			<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Orientation = "Vertical" 
+					RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}"
+					RelativeLayout.HeightConstraint = "40"
+					RelativeLayout.XConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 0, Constant = 0}"
+					RelativeLayout.YConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Height, Factor = 0.8, Constant = 20}" 
+					Padding = "30,0">
+
+				<Button x:Name = "BuyButton" Text = "Buy" BackgroundColor = "Teal" HorizontalOptions = "FillAndExpand" VerticalOptions = "Start" TextColor = "White"/>
+
+			</StackLayout>
+		</RelativeLayout>
+
+	</ContentPage.Content>
+</ContentPage>

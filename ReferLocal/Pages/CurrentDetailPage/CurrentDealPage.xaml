@@ -45,7 +45,7 @@
 				</Grid>
 
 			</StackLayout>
-			<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" AbsoluteLayout.LayoutBounds = ".5, 0.95, 1, .1"
+			<!--<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" AbsoluteLayout.LayoutBounds = ".5, 0.95, 1, .1"
 					AbsoluteLayout.LayoutFlags = "All" BackgroundColor = "Transparent">
 				<Grid HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "Transparent">
 					<Grid.RowDefinitions>
@@ -58,7 +58,7 @@
 						Grid.Row = "0" Grid.Column = "0" BackgroundColor = "Transparent" />
 					
 				</Grid>
-			</StackLayout>
+			</StackLayout>-->
 		</AbsoluteLayout>
 
 		

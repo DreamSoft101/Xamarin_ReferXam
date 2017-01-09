@@ -11,6 +11,8 @@ namespace ReferLocal
 	public class RootPage : MasterDetailPage
 	{
 
+
+
 		Dictionary<MenuType, NavigationPage> Pages { get; set;}
 
 		public RootPage()
@@ -90,6 +92,20 @@ namespace ReferLocal
 
 	public class RootTabPage : TabbedPage
 	{
+
+		static RootTabPage shared = null;
+		public MyCartPage myCartPage { get; set;}
+
+		public static RootTabPage sharedRootPage()
+		{
+			if (shared == null)
+			{
+				shared = new RootTabPage();
+			}
+
+			return shared;
+		}
+
 		public RootTabPage()
 		{
 			NavigationPage.SetHasNavigationBar(this, false);
@@ -104,11 +120,13 @@ namespace ReferLocal
 				Icon = new FileImageSource { File = "deal_icon_empty.png" }
 			});
 
-			Children.Add(new RLNavigationPage(new MyCartPage
+			myCartPage = new MyCartPage
 			{
 				Title = "MY CART",
 				Icon = new FileImageSource { File = "cart_icon_empty.png" }
-			})
+			};
+
+			Children.Add(new RLNavigationPage(myCartPage)
 			{
 				Title = "MY CART",
 				Icon = new FileImageSource { File = "cart_icon_empty.png" }
@@ -124,7 +142,7 @@ namespace ReferLocal
 				Icon = new FileImageSource { File = "my_deals_icon_empty.png" }
 			});
 
-			Children.Add(new RLNavigationPage(new AccountPage
+			Children.Add(new RLNavigationPage(new MyAccountPage
 			{
 				Title = "MY ACCOUNT",
 				Icon = new FileImageSource { File = "account_icon_empty.png" }

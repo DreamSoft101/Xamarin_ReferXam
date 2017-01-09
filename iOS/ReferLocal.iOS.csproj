@@ -146,11 +146,34 @@
     <Reference Include="PCL.Utils.iOS">
       <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\Xamarin.iOS10\PCL.Utils.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Stripe">
+      <HintPath>..\Components\stripe-1.0.7\lib\ios-unified\Stripe.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReferLocal\ReferLocal.csproj">
       <Project>{1596E4B2-0893-48C3-882D-5C9DECD73BA6}</Project>
       <Name>ReferLocal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net.Mobile.Core\ZXing.Net.Mobile.Core.csproj">
+      <Project>{7528DD0A-1781-47F4-ADBF-EEDDB011F6BB}</Project>
+      <Name>ZXing.Net.Mobile.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net.Mobile.Forms\ZXing.Net.Mobile.Forms.csproj">
+      <Project>{8E54DB74-C094-4016-859A-D1C7F2509A58}</Project>
+      <Name>ZXing.Net.Mobile.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net.Mobile.Forms.iOS\ZXing.Net.Mobile.Forms.iOS.csproj">
+      <Project>{8370ADB4-229C-4DEC-908F-B1A8FC155523}</Project>
+      <Name>ZXing.Net.Mobile.Forms.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net.Mobile.iOS\ZXing.Net.Mobile.iOS.csproj">
+      <Project>{6CBD1DF3-1FD3-4F20-80A2-A0C7414C411A}</Project>
+      <Name>ZXing.Net.Mobile.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net\zxing.portable.csproj">
+      <Project>{24B441F2-CBE9-4405-9FD0-72EBCBEA0EC3}</Project>
+      <Name>zxing.portable</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +200,7 @@
     <Compile Include="Renderers\CustomButtonRender.cs" />
     <Compile Include="Renderers\ButtonEffect.cs" />
     <Compile Include="Renderers\HtmlLabelRenderer.cs" />
+    <Compile Include="Renderers\CreditCardInputPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\bg_login.png" />
@@ -228,7 +252,15 @@
     <BundleResource Include="Resources\timbers_thumb.jpg" />
     <BundleResource Include="Resources\wetzels_deal_header_image.jpg" />
     <BundleResource Include="Resources\wisecrackers_deal_header_image.jpg" />
-    <BundleResource Include="Resources\font\gotham-bold.ttf" />
+    <BundleResource Include="Resources\font\Back to Black Demo.ttf" />
+    <BundleResource Include="Resources\bakery.ttf" />
+    <BundleResource Include="Resources\gotham-bold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="stripe">
+      <Version>1.0.7</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

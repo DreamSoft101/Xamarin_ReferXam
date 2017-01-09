@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ReferLocal.CheckOutPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="ReferLocal.CheckOutPage" xmlns:local = "clr-namespace:ReferLocal">
 	<ContentPage.Content>
 		<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
 
@@ -37,20 +38,25 @@
 							<BoxView HorizontalOptions = "FillAndExpand" Grid.Row = "0" Grid.Column = "0" BackgroundColor = "#1269b0" />
 							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White" Orientation = "Horizontal" 
 								Grid.Row = "1" Grid.Column = "0">
-								<Label Text = "SUBTOTAL" TextColor = "#737373" FontSize = "14" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand"/>
-								<Label x:Name = "p" Text = "$50.00" TextColor = "Black" FontSize = "25" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" 
+								<Label Text = "SUBTOTAL" TextColor = "#737373" FontSize = "14" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand"/>
+								<Label x:Name = "SubTotalPriceLabel" Text = "" TextColor = "Black" FontSize = "25" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" 
 								VerticalOptions = "CenterAndExpand"/>
 							</StackLayout >
 							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White" Orientation = "Horizontal" 
 								Grid.Row = "2" Grid.Column = "0">
-								<Label Text = "COUPON CODE" TextColor = "#737373" FontSize = "14" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand"/>
-								<Label x:Name = "l" Text = "APPLY" TextColor = "Black" FontSize = "25" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" 
+								<StackLayout HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand" BackgroundColor = "White" Padding = "0">
+									<local:CustomEntry x:Name = "CouponCodeField" Placeholder = "COUPON CODE" TextColor = "#737373"  FontSize = "14"  HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand"
+										/>
+									<BoxView HorizontalOptions = "FillAndExpand" VerticalOptions = "Start" HeightRequest = "1" BackgroundColor = "Gray" Opacity = "0.7"/>
+								</StackLayout>
+
+								<Label x:Name = "CouponCodeApplyLabel" Text = "APPLY" TextColor = "Black" FontSize = "25" FontAttributes = "None" HorizontalOptions = "CenterAndExpand" 
 								VerticalOptions = "CenterAndExpand"/>
 							</StackLayout >
 							<StackLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" BackgroundColor = "White" Orientation = "Horizontal" 
 								Grid.Row = "3" Grid.Column = "0">
-								<Label Text = "TOTAL" TextColor = "#737373" FontSize = "14" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand"/>
-								<Label x:Name = "w" Text = "$50.00" TextColor = "Black" FontSize = "25" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" 
+								<Label Text = "TOTAL" TextColor = "#737373" FontSize = "14" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand"/>
+								<Label x:Name = "TotalPriceLabel" Text = "" TextColor = "Black" FontSize = "25" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" 
 								VerticalOptions = "CenterAndExpand"/>
 							</StackLayout >
 						</Grid>

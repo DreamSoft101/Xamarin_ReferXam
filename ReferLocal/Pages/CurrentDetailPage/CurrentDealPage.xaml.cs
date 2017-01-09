@@ -45,16 +45,6 @@ namespace ReferLocal
 				selectedIndex = (offerListView.ItemsSource as List<Offer>).IndexOf(e.SelectedItem as Offer);
 				Debug.WriteLine(@"Selected Row  is  {0}", selectedIndex);
 			};
-
-			addCartBtn.GestureRecognizers.Add(
-
-				new TapGestureRecognizer()
-				{
-					NumberOfTapsRequired = 1,
-					Command = new Command(OnAddCartBtnTapped)
-				}
-			);
-
 		}
 
 		//Button Action

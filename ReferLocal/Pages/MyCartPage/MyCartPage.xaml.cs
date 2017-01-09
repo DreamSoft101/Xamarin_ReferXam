@@ -21,6 +21,12 @@ namespace ReferLocal
 		{
 			InitializeComponent();
 
+			#region wire up MessagingCenter
+
+			MessagingCenter.Subscribe<MyCartPage>(this, "Success", sender => LoadMyCarts());
+
+			#endregion
+
 			Initialize();
 		}
 
@@ -127,7 +133,7 @@ namespace ReferLocal
 			//	await App.Current.MainPage.DisplayAlert("Error", "Request Failed.", "OK");
 			//}
 
-			await Navigation.PushAsync(new CheckOutPage(), true);
+			await Navigation.PushAsync(new CheckOutPage(myOffers), true);
 		}
 
 	}

@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Stripe;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
@@ -23,6 +23,9 @@ namespace ReferLocal.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+
+
+			Stripe.StripeClient.DefaultPublishableKey = "pk_test_qmnxHIxwb56pjZGWgRTOwlt5";
 
 			UserDialogs.Init(this);
 			LoadApplication(new App());

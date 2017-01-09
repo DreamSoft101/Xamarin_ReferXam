@@ -81,6 +81,24 @@
     <EmbeddedResource Include="Cells\DealCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cells\OrderCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MyDealsPage\DealWebPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MyCartPage\StripePaymentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AccountPage\MyAccountPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MyCartPage\StripeCardInputPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MyCartPage\CreditCardInputPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -168,6 +186,24 @@
     </Compile>
     <Compile Include="ViewModels\HtmlLabel.cs" />
     <Compile Include="Models\LoginSuccessDataModel.cs" />
+    <Compile Include="Cells\OrderCell.xaml.cs">
+      <DependentUpon>OrderCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyDealsPage\DealWebPage.xaml.cs">
+      <DependentUpon>DealWebPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyCartPage\StripePaymentPage.xaml.cs">
+      <DependentUpon>StripePaymentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AccountPage\MyAccountPage.xaml.cs">
+      <DependentUpon>MyAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyCartPage\StripeCardInputPage.xaml.cs">
+      <DependentUpon>StripeCardInputPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyCartPage\CreditCardInputPage.xaml.cs">
+      <DependentUpon>CreditCardInputPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.Connectivity.Abstractions">
@@ -250,6 +286,20 @@
     <Folder Include="Models\" />
     <Folder Include="Pages\Login\" />
     <Folder Include="Utility\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Source\ZXing.Net.Mobile.Core\ZXing.Net.Mobile.Core.csproj">
+      <Project>{7528DD0A-1781-47F4-ADBF-EEDDB011F6BB}</Project>
+      <Name>ZXing.Net.Mobile.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net.Mobile.Forms\ZXing.Net.Mobile.Forms.csproj">
+      <Project>{8E54DB74-C094-4016-859A-D1C7F2509A58}</Project>
+      <Name>ZXing.Net.Mobile.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\ZXing.Net\zxing.portable.csproj">
+      <Project>{24B441F2-CBE9-4405-9FD0-72EBCBEA0EC3}</Project>
+      <Name>zxing.portable</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

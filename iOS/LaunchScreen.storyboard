@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,19 +15,17 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3" translatesAutoresizingMaskIntoConstraints="NO" image="home_screen_bckgd.jpg">
-                                <rect key="frame" x="0.0" y="1" width="600" height="599"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_screen_bckgd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3"/>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint id="11" firstItem="Llm-lL-Icb" firstAttribute="bottom" secondItem="3" secondAttribute="top"/>
-                            <constraint id="12" firstItem="3" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing"/>
-                            <constraint id="13" firstItem="3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading"/>
-                            <constraint id="14" firstItem="3" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top"/>
+                            <constraint firstItem="Llm-lL-Icb" firstAttribute="bottom" secondItem="3" secondAttribute="top" constant="20" id="11"/>
+                            <constraint firstItem="3" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="12"/>
+                            <constraint firstItem="3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="13"/>
+                            <constraint firstItem="3" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="14"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,84 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="action-buttons/back-button.png" width="81" height="81"/>
-        <image name="action-buttons/complete-checkout-button.png" width="1171" height="222"/>
-        <image name="action-buttons/continue-button.png" width="1171" height="222"/>
-        <image name="action-buttons/log-out-button.png" width="1171" height="222"/>
-        <image name="merchant images/ben-and-jerrys-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="merchant images/concert-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="merchant images/default-mohegan-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="merchant images/home-screen-bckgd.jpg" width="3000" height="1987"/>
-        <image name="merchant images/pacer's-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="merchant images/rustic-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="merchant images/timbers-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="merchant images/timbers-thumb.jpg" width="395" height="531"/>
-        <image name="merchant images/wetzels-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="merchant images/wisecrackers-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="tool bar/account-icon-empty.png" width="66" height="66"/>
-        <image name="tool bar/account-icon-fill.png" width="66" height="66"/>
-        <image name="tool bar/cart-icon-empty.png" width="66" height="66"/>
-        <image name="tool bar/cart-icon-fill.png" width="66" height="66"/>
-        <image name="tool bar/deal-icon-empty.png" width="66" height="66"/>
-        <image name="tool bar/deal-icon-fill.png" width="66" height="66"/>
-        <image name="tool bar/my-deals-icon-empty.png" width="66" height="66"/>
-        <image name="tool bar/my-deals-icon-fill.png" width="66" height="66"/>
-        <image name="account-icon-empty.png" width="66" height="66"/>
-        <image name="account-icon-fill.png" width="66" height="66"/>
-        <image name="add-to-cart-button.png" width="1171" height="222"/>
-        <image name="back-button.png" width="81" height="81"/>
-        <image name="bg_login.png" width="1500" height="994"/>
-        <image name="cart-icon-empty.png" width="66" height="66"/>
-        <image name="cart-icon-fill.png" width="66" height="66"/>
-        <image name="complete-checkout-button.png" width="1171" height="222"/>
-        <image name="continue-button.png" width="1171" height="222"/>
-        <image name="deal-icon-empty.png" width="90" height="66"/>
-        <image name="deal-icon-fill.png" width="90" height="66"/>
-        <image name="log-out-button.png" width="1171" height="222"/>
-        <image name="my-deals-icon-empty.png" width="66" height="66"/>
-        <image name="my-deals-icon-fill.png" width="66" height="66"/>
-        <image name="preferences-box.png" width="81" height="81"/>
-        <image name="profile-icon.png" width="210" height="210"/>
-        <image name="refer-logo.png" width="460" height="455"/>
-        <image name="ben-and-jerrys-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="concert-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="default-mohegan-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="home-screen-bckgd.jpg" width="3000" height="1987"/>
-        <image name="pacer's-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="rustic-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="timbers-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="timbers-thumb.jpg" width="395" height="531"/>
-        <image name="wetzels-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="wisecrackers-deal-header-image.jpg" width="1721" height="811"/>
-        <image name="accessory_button.png" width="81" height="81"/>
-        <image name="account_icon_empty.png" width="22" height="22"/>
-        <image name="account_icon_fill.png" width="44" height="44"/>
-        <image name="add_to_cart_button.png" width="1171" height="222"/>
-        <image name="back_button.png" width="81" height="81"/>
-        <image name="ben_and_jerrys_deal_header_image.jpg" width="1721" height="811"/>
-        <image name="cart_icon_empty.png" width="23" height="21"/>
-        <image name="cart_icon_fill.png" width="46" height="42"/>
-        <image name="complete_checkout_button.png" width="1171" height="222"/>
-        <image name="concert_deal_header_image.jpg" width="1721" height="811"/>
-        <image name="continue_button.png" width="1171" height="222"/>
-        <image name="deal_icon_empty.png" width="27.5" height="13.5"/>
-        <image name="deal_icon_fill.png" width="55" height="27"/>
-        <image name="default_mohegan_deal_header_image.jpg" width="1721" height="811"/>
         <image name="home_screen_bckgd.jpg" width="3000" height="1987"/>
-        <image name="icon.png" width="72" height="72"/>
-        <image name="log_out_button.png" width="1171" height="222"/>
-        <image name="my_deals_icon_empty.png" width="20.5" height="22.5"/>
-        <image name="my_deals_icon_fill.png" width="41" height="45"/>
-        <image name="pacer's_deal_header_image.jpg" width="1721" height="811"/>
-        <image name="preferences_box_filled.png" width="81" height="81"/>
-        <image name="preferences_box.png" width="81" height="81"/>
-        <image name="preferences_filled.png" width="81" height="81"/>
-        <image name="profile_icon.png" width="210" height="210"/>
-        <image name="refer_logo.png" width="460" height="455"/>
-        <image name="rustic_deal_header_image.jpg" width="1721" height="811"/>
-        <image name="timbers_deal_header_image.jpg" width="1721" height="811"/>
-        <image name="timbers_thumb.jpg" width="395" height="531"/>
-        <image name="wetzels_deal_header_image.jpg" width="1721" height="811"/>
-        <image name="wisecrackers_deal_header_image.jpg" width="1721" height="811"/>
     </resources>
 </document>

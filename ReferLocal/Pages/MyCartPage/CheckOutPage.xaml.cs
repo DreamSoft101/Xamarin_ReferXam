@@ -8,9 +8,16 @@ namespace ReferLocal
 {
 	public partial class CheckOutPage : ContentPage
 	{
-		public CheckOutPage()
+
+		public List<Offer> offerArrInCart;
+
+		float totalPrice = 0;
+
+		public CheckOutPage(List<Offer> _offerArrInCart)
 		{
 			InitializeComponent();
+			Title = "CHECKOUT";
+			offerArrInCart = _offerArrInCart;
 
 			checkOutBtn.GestureRecognizers.Add(
 
@@ -29,14 +36,41 @@ namespace ReferLocal
 					Command = new Command(ShopBtn_Clicked)
 				}
 			);
+
+			UpdateComponent();
+		}
+
+		public CheckOutPage()
+		{
+			InitializeComponent();
+
+
+		}
+
+		public void UpdateComponent()
+		{
+
+			foreach (Offer offer in offerArrInCart)
+			{
+
+				totalPrice = totalPrice + float.Parse(offer.price);
+
+			}
+
+			SubTotalPriceLabel.Text = totalPrice.ToString("C");
+			TotalPriceLabel.Text = totalPrice.ToString("C");
 		}
 
 		private async void CheckOutBtn_Clicked()
 		{
 
-			var result = await APIManager.sharedInstance().Checkout("stripeToken", "amount", "couponCode", "cartId", "email");
+			//var amount = totalPrice.ToString();
+			//var couponCode = CouponCodeField.Text;
 
+			//var result = await APIManager.sharedInstance().Checkout("stripeToken", amount,  couponCode, "cartId", "email");
 
+			//await Navigation.PushAsync(new CreditCardInputPage());
+			await Navigation.PushModalAsync(new CreditCardInputPage());
 		}
 
 		private void ShopBtn_Clicked()

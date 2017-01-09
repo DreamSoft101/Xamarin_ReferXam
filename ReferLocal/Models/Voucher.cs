@@ -9,7 +9,7 @@ namespace ReferLocal
 		public string code { get; set;}
 		public long offerId { get; set;} 
 		public DateTime expires { get; set;}
-		public DateTime redeemedDate { get; set;}
+		public string redeemedDate { get; set;}
 		public long transactionId { get; set;}
 		public string gifted { get; set;}
 		public string redeemed { get; set;}

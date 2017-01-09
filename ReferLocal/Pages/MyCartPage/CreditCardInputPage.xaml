@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ReferLocal.CreditCardInputPage">
+	<ContentPage.Content>
+
+		<RelativeLayout HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand">
+			<StackLayout x:Name = "NavigationBarLayout" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand"
+						Orientation = "Vertical"
+						RelativeLayout.WidthConstraint = "{ConstraintExpression Type = RelativeToParent, Property = Width, Factor = 1, Constant = 0}"
+						BackgroundColor = "#1269b0" Padding = "0,30,0,10">
+				<StackLayout Padding = "5"  HorizontalOptions = "Start" VerticalOptions = "FillAndExpand" Orientation = "Horizontal">
+						<Image x:Name = "BackBtn" Source = "back_button.png" HorizontalOptions = "Start" WidthRequest = "30" HeightRequest = "30"/>
+				</StackLayout>
+				<Image HorizontalOptions = "CenterAndExpand" VerticalOptions = "Start" Source = "refer_logo.png" WidthRequest = "80" HeightRequest = "80" Aspect = "AspectFit"/>
+				<Label Text = "ReferLocal" FontSize = "19" TextColor = "White" FontAttributes = "Bold" HorizontalOptions = "CenterAndExpand" VerticalOptions = "Center" HorizontalTextAlignment = "Center"/>
+				<Label Text = "ReferLocal Purchase" FontSize = "16" TextColor = "White" FontAttributes = "None" HorizontalOptions = "CenterAndExpand" VerticalOptions = "Center" HorizontalTextAlignment = "Center"/>
+					
+					
+			</StackLayout>
+
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>

@@ -25,5 +25,7 @@ namespace ReferLocal
 		{
 			await Navigation.PopModalAsync();
 		}
+
+
 	}
 }

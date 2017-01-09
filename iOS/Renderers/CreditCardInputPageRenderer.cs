@@ -20,6 +20,8 @@ namespace ReferLocal.iOS
 		StripeView stripeView;
 		UIButton buttonPay;
 
+		CreditCardInputPage inputPage;
+
 		protected override void OnElementChanged(VisualElementChangedEventArgs e)
 		{
 			base.OnElementChanged(e);
